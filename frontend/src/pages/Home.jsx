@@ -51,23 +51,23 @@ const weeklyFeaturedMeals = [
     stats: "4.8 ★ (950 orders)"
   },
   {
-    name: "Comfort Matoke & Chicken Stew",
+    name: "Chicken Stew",
     desc: "Slow-simmered green bananas served steaming hot in a rich, velvety tomato herb gravy.",
-    img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=800",
+    img: "./chickenstew.jpeg",
     badge: "Chef Special",
     stats: "4.9 ★ (820 orders)"
   },
   {
-    name: "Flame-Grilled Chicken, Rice & Veg",
+    name: "Vegetable Rice",
     desc: "Perfectly grilled quarter chicken paired with fragrant rice and crunchy blanched broccoli.",
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=800",
+    img: "./vegetablerice.jpeg",
     badge: "Healthy Pick",
     stats: "4.7 ★ (1.1k orders)"
   },
   {
-    name: "Spicy Goat Fry (Choma style) & Salad",
+    name: "Goat Fry",
     desc: "Tender, pan-fried choma-style goat meat served over long-grain fluffy rice.",
-    img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&q=80&w=800",
+    img: "./goatstew.jpeg",
     badge: "Weekend Classic",
     stats: "5.0 ★ (640 orders)"
   }
@@ -211,15 +211,15 @@ function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
                       
                       {/* Floating Indicator Badge - Top Left */}
-                      <div className="absolute top-6 left-6 z-20">
-                        <span className="inline-flex bg-[#F28C28] text-white font-['Poppins'] font-bold text-xs uppercase px-5 py-2.5 rounded-full shadow-lg tracking-wider">
+                      <div className="absolute top-4 left-4 z-20">
+                        <span className="inline-flex bg-[#F28C28] text-white font-['Poppins'] font-bold text-xs uppercase px-3 py-1.5 rounded-full shadow-lg tracking-wider">
                           {meal.badge}
                         </span>
                       </div>
                       
                       {/* Rating Badge - Top Right */}
-                      <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md text-[#3A2E24] font-bold text-sm px-4 py-2.5 rounded-full z-20 shadow-lg flex items-center gap-2">
-                        <Star size={14} className="fill-[#F28C28] text-[#F28C28]" /> {meal.stats}
+                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md text-[#3A2E24] font-bold text-xs px-3 py-1.5 rounded-full z-20 shadow-lg flex items-center gap-1.5">
+                        <Star size={12} className="fill-[#F28C28] text-[#F28C28]" /> {meal.stats}
                       </div>
                     </div>
 
