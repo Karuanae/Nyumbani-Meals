@@ -21,7 +21,7 @@ const menuItems = [
     name: "Ugali, Sukuma Wiki & Beef Stew",
     category: "Signature Meals",
     desc: "A timeless premium classic. Rich, hearty, deeply satisfying chunks of organic slow-simmered beef stew.",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    img: "./ugalisukuma.jpeg",
     label: "Timeless Classic",
     macros: "Protein: 42g | Carbs: 65g | Fats: 14g",
     ingredients: ["Organic Local Beef", "Fresh Skuma Wiki (Collard Greens)", "White Maize Meal Ugali", "Chef's Gravy"]
@@ -30,25 +30,25 @@ const menuItems = [
     name: "Fragrant Coastal Pilau & Beef",
     category: "Signature Meals",
     desc: "Fragrant, spiced coastal pilau prepared with premium long-grain rice, served with juicy beef chunks and fresh kachumbari.",
-    img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&q=80&w=600",
+    img: "./pilau.jpeg",
     label: "Fragrant & Flavorful",
     macros: "Protein: 38g | Carbs: 78g | Fats: 12g",
     ingredients: ["Basmati Rice", "Tender Beef Cubes", "Pilau Masala Herbs", "Red Onion & Tomato Kachumbari"]
   },
   {
-    name: "Matoke & Thick Chicken Stew",
+    name: "Chicken Stew",
     category: "Signature Meals",
     desc: "Comfort food done right. Slow-stewed organic green bananas served steaming hot in a thick, savory chicken gravy.",
-    img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=600",
+    img: "./chickenstew.jpeg",
     label: "Pure Comfort",
     macros: "Protein: 35g | Carbs: 55g | Fats: 15g",
     ingredients: ["Kisii Green Bananas (Matoke)", "Free-range Chicken Strips", "Bell Peppers", "Fresh Coriander Root"]
   },
   {
-    name: "Goat Fry, Rice & Salad",
+    name: "Goat Fry",
     category: "Signature Meals",
     desc: "Spicy, perfectly tender pan-fried choma-style goat meat seasoned to perfection and layered over fluffy long-grain rice.",
-    img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&q=80&w=600",
+    img: "./goatstew.jpeg",
     label: "Local Favorite",
     macros: "Protein: 45g | Carbs: 70g | Fats: 18g",
     ingredients: ["Premium Local Goat Choma", "Aromatic Fluffy Rice", "Fresh Cabbage Shavings", "Local Herbs"]

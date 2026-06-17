@@ -75,9 +75,9 @@ const weeklyFeaturedMeals = [
 
 // 3. Visual Menu Categories
 const quickCategories = [
-  { title: "Breakfast Classics", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=500", link: "/meals" },
-  { title: "Signature Lunches", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=500", link: "/meals" },
-  { title: "Hearty Family Dinners", img: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=500", link: "/meals" }
+  { title: "Breakfast Classics", img: "./breakfast.jpeg", link: "/meals" },
+  { title: "Signature Lunches", img: "./lunch.jpeg", link: "/meals" },
+  { title: "Hearty Family Dinners", img: "./dinner.jpeg", link: "/meals" }
 ];
 
 function Home() {
