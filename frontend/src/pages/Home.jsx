@@ -39,14 +39,14 @@ const weeklyFeaturedMeals = [
   {
     name: "Ugali, Sukuma Wiki & Beef Stew",
     desc: "A timeless premium classic. Rich, hearty, satisfying chunks of organic beef stew.",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
+    img: "./ugalisukuma.jpeg",
     badge: "Most Ordered",
     stats: "4.9 ★ (1.2k orders)"
   },
   {
     name: "Fragrant Coastal Pilau & Beef",
     desc: "Aromatic basmati rice cooked with authentic coastal spices, served with tender beef and kachumbari.",
-    img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&q=80&w=800",
+    img: "./pilau.jpeg",
     badge: "Trending #1",
     stats: "4.8 ★ (950 orders)"
   },
@@ -93,11 +93,11 @@ function Home() {
   }, []);
 
   const nextCarousel = () => {
-    setCarouselIndex((prev) => (prev >= weeklyFeaturedMeals.length - 3 ? 0 : prev + 1));
+    setCarouselIndex((prev) => (prev >= weeklyFeaturedMeals.length - 1 ? 0 : prev + 1));
   };
 
   const prevCarousel = () => {
-    setCarouselIndex((prev) => (prev === 0 ? weeklyFeaturedMeals.length - 3 : prev - 1));
+    setCarouselIndex((prev) => (prev === 0 ? weeklyFeaturedMeals.length - 1 : prev - 1));
   };
 
   return (
@@ -193,49 +193,53 @@ function Home() {
           {/* Active Carousel Wrapper Component */}
           <div className="relative w-full overflow-hidden">
             <div 
-              className="flex gap-8 transition-transform duration-700 ease-out"
-              style={{ transform: `translateX(-${carouselIndex * (100 / 3.05)}%)` }}
+              className="flex gap-6 transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${carouselIndex * 50}%)` }}
             >
               {weeklyFeaturedMeals.map((meal, idx) => (
                 <div 
                   key={idx} 
-                  className="w-full min-w-[100%]"
+                  className="w-1/2 min-w-[50%]"
                 >
-                  <div className="bg-[#FFF3E9]/40 border border-orange-100/30 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 group flex flex-col h-full">
+                  <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 group flex flex-col h-full bg-white">
                     
-                    {/* Meal Card Top Frame Visual */}
-                    <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-gray-100">
-                      <img src={meal.img} alt={meal.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {/* Large Featured Image Section */}
+                    <div className="relative w-full h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                      <img src={meal.img} alt={meal.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                       
-                      {/* Floating Indicator Badges */}
-                      <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
-                        <span className="bg-[#F28C28] text-white font-['Poppins'] font-bold text-xs uppercase px-4 py-1.5 rounded-xl shadow-md tracking-wider">
+                      {/* Overlay gradient for better text contrast */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-40 group-hover:opacity-50 transition-opacity duration-300"></div>
+                      
+                      {/* Floating Indicator Badge - Top Left */}
+                      <div className="absolute top-6 left-6 z-20">
+                        <span className="inline-flex bg-[#F28C28] text-white font-['Poppins'] font-bold text-xs uppercase px-5 py-2.5 rounded-full shadow-lg tracking-wider">
                           {meal.badge}
                         </span>
                       </div>
-                      <div className="absolute bottom-4 right-4 bg-[#3A2E24]/90 backdrop-blur-md text-white font-semibold text-xs px-3 py-1.5 rounded-lg z-20 shadow-sm flex items-center gap-1">
-                        <Star size={12} className="fill-[#F28C28] text-[#F28C28]" /> {meal.stats}
+                      
+                      {/* Rating Badge - Top Right */}
+                      <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md text-[#3A2E24] font-bold text-sm px-4 py-2.5 rounded-full z-20 shadow-lg flex items-center gap-2">
+                        <Star size={14} className="fill-[#F28C28] text-[#F28C28]" /> {meal.stats}
                       </div>
                     </div>
 
-                    {/* Meal Info Bottom Box */}
-                    <div className="p-6 flex flex-col justify-between flex-1 bg-white">
-                      <div className="space-y-2">
-                        <h3 className="font-['Poppins'] font-bold text-xl text-[#3A2E24] tracking-tight group-hover:text-[#21633D] transition-colors duration-300">
+                    {/* Meal Info Section - Expanded */}
+                    <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 bg-white">
+                      <div className="space-y-3">
+                        <h3 className="font-['Poppins'] font-bold text-lg sm:text-xl text-[#3A2E24] tracking-tight group-hover:text-[#21633D] transition-colors duration-300 leading-tight">
                           {meal.name}
                         </h3>
-                        <p className="text-gray-500 font-light text-sm leading-relaxed">
+                        <p className="text-gray-600 font-light text-sm leading-relaxed">
                           {meal.desc}
                         </p>
                       </div>
                       
-                      <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span className="text-xs text-gray-400 flex items-center gap-1">
-                          <Clock size={12} /> Ready-to-Eat Daily Box
+                      <div className="mt-6 pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <span className="text-xs text-gray-500 flex items-center gap-2 font-medium">
+                          <Clock size={12} className="text-[#6BA43A]" /> Ready-to-Eat Box
                         </span>
-                        <a href="https://wa.me/254795317878" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-[#21633D] hover:text-[#F28C28] uppercase tracking-wider transition-colors">
-                          Order via Chat <UtensilsCrossed size={12} />
+                        <a href="https://wa.me/254795317878" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#21633D] hover:bg-[#F28C28] text-white font-['Poppins'] font-bold text-xs uppercase tracking-wider rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                          Order <UtensilsCrossed size={12} />
                         </a>
                       </div>
                     </div>
