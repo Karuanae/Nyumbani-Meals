@@ -13,108 +13,247 @@ import {
 } from "lucide-react";
 
 // Full menu array expanded from the signature documents and brand flyers
-const categories = ["All", "Signature Meals", "Breakfast Classics", "Family Packages"];
+const categories = ["All", "Breakfast", "Lunch", "Dinner", "Fitness Menu", "Kids Menu"];
 
 const menuItems = [
-  // 1. Signature Meals
+  // Breakfast Menu
   {
-    name: "Ugali, Sukuma Wiki & Beef Stew",
-    category: "Signature Meals",
-    desc: "A timeless premium classic. Rich, hearty, deeply satisfying chunks of organic slow-simmered beef stew.",
-    img: "./ugalisukuma.jpeg",
-    label: "Timeless Classic",
-    macros: "Protein: 42g | Carbs: 65g | Fats: 14g",
-    ingredients: ["Organic Local Beef", "Fresh Skuma Wiki (Collard Greens)", "White Maize Meal Ugali", "Chef's Gravy"]
+    name: "Kenyan Classic",
+    category: "Breakfast",
+    desc: "A warm morning set with tea or coffee, two soft chapatis, two eggs, and seasonal fruit for a classic start.",
+    img: "./chapomayai.jpeg",
+    label: "Breakfast Set",
+    macros: "Carbs + Protein + Fresh Fruit",
+    ingredients: ["Kenyan Tea or Coffee", "2 Chapatis", "2 Eggs", "Seasonal Fruit"]
   },
   {
-    name: "Fragrant Coastal Pilau & Beef",
-    category: "Signature Meals",
-    desc: "Fragrant, spiced coastal pilau prepared with premium long-grain rice, served with juicy beef chunks and fresh kachumbari.",
-    img: "./pilau.jpeg",
-    label: "Fragrant & Flavorful",
-    macros: "Protein: 38g | Carbs: 78g | Fats: 12g",
-    ingredients: ["Basmati Rice", "Tender Beef Cubes", "Pilau Masala Herbs", "Red Onion & Tomato Kachumbari"]
+    name: "Power Breakfast",
+    category: "Breakfast",
+    desc: "A high-energy breakfast with steel-cut oatmeal, banana, boiled eggs, and a glass of fresh juice.",
+    img: "./powerbreakfast.jpeg",
+    label: "Fuel Up",
+    macros: "Fiber + Protein + Vitamins",
+    ingredients: ["Oatmeal", "Banana", "Boiled Eggs", "Fresh Juice"]
   },
   {
-    name: "Chicken Stew",
-    category: "Signature Meals",
-    desc: "Comfort food done right. Slow-stewed organic green bananas served steaming hot in a thick, savory chicken gravy.",
-    img: "./chickenstew.jpeg",
-    label: "Pure Comfort",
-    macros: "Protein: 35g | Carbs: 55g | Fats: 15g",
-    ingredients: ["Kisii Green Bananas (Matoke)", "Free-range Chicken Strips", "Bell Peppers", "Fresh Coriander Root"]
+    name: "Pancake Morning",
+    category: "Breakfast",
+    desc: "Fluffy pancakes served with grilled sausages, fruit salad, and a warm cup of tea or coffee.",
+    img: "./pancakemorning.jpeg",
+    label: "Sweet Start",
+    macros: "Protein + Carbs + Fresh Fruit",
+    ingredients: ["Pancakes", "Sausages", "Fruit Salad", "Tea or Coffee"]
   },
   {
-    name: "Goat Fry",
-    category: "Signature Meals",
-    desc: "Spicy, perfectly tender pan-fried choma-style goat meat seasoned to perfection and layered over fluffy long-grain rice.",
-    img: "./goatstew.jpeg",
-    label: "Local Favorite",
-    macros: "Protein: 45g | Carbs: 70g | Fats: 18g",
-    ingredients: ["Premium Local Goat Choma", "Aromatic Fluffy Rice", "Fresh Cabbage Shavings", "Local Herbs"]
-  },
-
-  // 2. Breakfast Classics
-  {
-    name: "Masala Omelette & Wholemeal Toast",
-    category: "Breakfast Classics",
-    desc: "Protein-packed farm fresh eggs scrambled with diced tomatoes, onions, vibrant green chilis, and local spices.",
-    img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=600",
-    label: "Morning Fuel",
-    macros: "Protein: 24g | Carbs: 28g | Fats: 16g",
-    ingredients: ["Farm Fresh Eggs", "Wholemeal Toast Layers", "Diced Birdseye Chili", "Coriander & Onion Mash"]
+    name: "Healthy Breakfast",
+    category: "Breakfast",
+    desc: "A bright, antioxidant-rich breakfast with Greek yogurt, granola, fruit mix, and fresh juice.",
+    img: "./healthybreakfast.jpeg",
+    label: "Light & Fresh",
+    macros: "Protein + Healthy Fats",
+    ingredients: ["Greek Yogurt", "Granola", "Fruit Mix", "Fresh Juice"]
   },
   {
-    name: "Pancakes With Fresh Fruits",
-    category: "Breakfast Classics",
-    desc: "Light, sweet, naturally delicious golden fluffy pancakes layered beautifully with seasonal sliced fruits and wild honey syrup.",
-    img: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
-    label: "Naturally Sweet",
-    macros: "Protein: 12g | Carbs: 85g | Fats: 8g",
-    ingredients: ["Fluffy Artisan Batter", "Seasonal Fresh Strawberries", "Sliced Bananas", "Organic Honey Drizzle"]
-  },
-  {
-    name: "Chapati & Chicken Sausage",
-    category: "Breakfast Classics",
-    desc: "Warm, soft, multi-layered flaky chapatis served alongside cleanly grilled premium lean chicken sausage links.",
-    img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=600",
-    label: "Energy Rich",
-    macros: "Protein: 28g | Carbs: 58g | Fats: 14g",
-    ingredients: ["Multi-layered Flaky Chapati", "Grilled Chicken Sausages", "Mild Tomato Fondue Dip"]
-  },
-  {
-    name: "Berry Smoothie Bowl",
-    category: "Breakfast Classics",
-    desc: "A rich, antioxidant-packed blend of fresh local strawberries, raspberries, and thick Greek yogurt topped with crunchy chia seeds.",
-    img: "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&q=80&w=600",
-    label: "Nutrient Rich",
-    macros: "Protein: 16g | Carbs: 45g | Fats: 5g",
-    ingredients: ["Fresh Local Mixed Berries", "Thick Probiotic Greek Yogurt", "Chia Seeds", "Toasted Oats Granolas"]
-  },
-  {
-    name: "Avocado Toast & Boiled Egg",
-    category: "Breakfast Classics",
-    desc: "Thick mash of seasonal premium Mt. Kenya avocados seasoned with sea salt, lime, and red pepper over crusty artisan brown bread.",
-    img: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=600",
-    label: "Healthy Fats",
-    macros: "Protein: 18g | Carbs: 32g | Fats: 22g",
-    ingredients: ["Premium Mt. Kenya Avocados", "Hard-Boiled Farm Egg", "Artisan Crusty Brown Bread", "Chili Flakes"]
+    name: "Family Breakfast",
+    category: "Breakfast",
+    desc: "A family-friendly breakfast with mini pancakes, scrambled eggs, sausages, and a fruit bowl.",
+    img: "./familybreakfast.jpeg",
+    label: "Family Friendly",
+    macros: "Balanced Kids + Adult Meal",
+    ingredients: ["Mini Pancakes", "Scrambled Eggs", "Sausages", "Fruit Bowl"]
   },
 
-  // 3. Family Packages
+  // Lunch Menu
   {
-    name: "The Full Nyumbani Feast",
-    category: "Family Packages",
-    desc: "A giant family-sized sharing tray featuring a mix of flame-grilled chicken, beef stew chunks, aromatic rice, and chapatis.",
-    img: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=600",
-    label: "Family Special",
-    macros: "Serves 4-5 People Comfortably",
-    ingredients: ["Whole Grilled Chicken", "Large Beef Stew Bowl", "Fluffy Basmati Rice Rice", "5 Layered Chapatis", "Double Kachumbari"]
+    name: "Monday Lunch – Swahili Chicken Feast",
+    category: "Lunch",
+    desc: "A coastal-inspired lunch with Swahili chicken, creamy coconut rice, spicy stew, kachumbari, and fresh fruit.",
+    img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&q=80&w=900",
+    label: "Monday Special",
+    macros: "Protein + Carbs + Fresh Greens",
+    ingredients: ["Swahili Chicken", "Coconut Rice", "Swahili Chicken Stew", "Kachumbari", "Seasonal Fruit"]
+  },
+  {
+    name: "Tuesday Lunch – Beef Delight",
+    category: "Lunch",
+    desc: "Rich beef stew paired with fragrant pilau rice, seasonal vegetables, and a sweet fruit finish.",
+    img: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=900",
+    label: "Tuesday Treat",
+    macros: "Hearty Beef + Vegetables",
+    ingredients: ["Beef Delight", "Pilau Rice", "Beef Stew", "Seasonal Vegetables", "Fruit"]
+  },
+  {
+    name: "Wednesday Lunch – Nyumbani Special",
+    category: "Lunch",
+    desc: "A home-style favorite with ugali, beef wet fry, sukuma wiki, and avocado for a satisfying shared meal.",
+    img: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=900",
+    label: "Midweek Classic",
+    macros: "Balanced Comfort Meal",
+    ingredients: ["Ugali", "Beef Wet Fry", "Sukuma Wiki", "Avocado"]
+  },
+  {
+    name: "Thursday Lunch – Healthy Bowl",
+    category: "Lunch",
+    desc: "A clean, nourishing bowl with brown rice, grilled chicken, mixed vegetables, and fresh fruit.",
+    img: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=900",
+    label: "Wholesome Choice",
+    macros: "Lean Protein + Fiber",
+    ingredients: ["Brown Rice", "Grilled Chicken", "Mixed Vegetables", "Fruit"]
+  },
+  {
+    name: "Friday Lunch – Fish Friday",
+    category: "Lunch",
+    desc: "A coastal lunch of fried fish fillet, coconut rice, crunchy coleslaw, and a refreshing fruit side.",
+    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=900",
+    label: "Seafood Favorite",
+    macros: "Omega-3 + Fresh Salad",
+    ingredients: ["Coconut Rice", "Fried Fish Fillet", "Coleslaw", "Fruit"]
+  },
+  {
+    name: "Saturday Lunch – Family Feast",
+    category: "Lunch",
+    desc: "A generous family platter with rice, chicken curry, mixed vegetables, and fruit for sharing.",
+    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=900",
+    label: "Weekend Feast",
+    macros: "Comfort + Shareable",
+    ingredients: ["Rice", "Chicken Curry", "Mixed Vegetables", "Fruit"]
+  },
+  {
+    name: "Sunday Lunch – Sunday Special",
+    category: "Lunch",
+    desc: "A celebratory Sunday lunch with pilau, roast beef, kachumbari, and a sweet dessert finish.",
+    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=900",
+    label: "Sunday Comfort",
+    macros: "Rich Feast + Dessert",
+    ingredients: ["Pilau", "Roast Beef", "Kachumbari", "Dessert"]
+  },
+
+  // Dinner Menu
+  {
+    name: "Monday Dinner – Beef Stew Plate",
+    category: "Dinner",
+    desc: "A hearty dinner with slow-cooked beef stew, soft chapati, and seasonal vegetables.",
+    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=900",
+    label: "Weekday Warmth",
+    macros: "Protein + Comfort",
+    ingredients: ["Beef Stew", "Chapati", "Vegetables"]
+  },
+  {
+    name: "Tuesday Dinner – Chicken Curry & Rice",
+    category: "Dinner",
+    desc: "Tender chicken curry served with steamed rice and a crisp salad for a balanced evening meal.",
+    img: "https://images.unsplash.com/photo-1512058564366-c9e9cf375e90?auto=format&fit=crop&q=80&w=900",
+    label: "Savory Dinner",
+    macros: "Protein + Greens",
+    ingredients: ["Chicken Curry", "Rice", "Salad"]
+  },
+  {
+    name: "Wednesday Dinner – Spaghetti Bolognese",
+    category: "Dinner",
+    desc: "Classic spaghetti bolognese with garlic bread and salad for a comforting midweek dinner.",
+    img: "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&q=80&w=900",
+    label: "Italian Night",
+    macros: "Pasta + Protein",
+    ingredients: ["Spaghetti Bolognese", "Garlic Bread", "Salad"]
+  },
+  {
+    name: "Thursday Dinner – Grilled Chicken Plate",
+    category: "Dinner",
+    desc: "Juicy grilled chicken with creamy mashed potatoes and sautéed vegetables.",
+    img: "https://images.unsplash.com/photo-1516684669134-de6b5f3f0ab4?auto=format&fit=crop&q=80&w=900",
+    label: "Classic Dinner",
+    macros: "Lean Protein + Veggies",
+    ingredients: ["Grilled Chicken", "Mashed Potatoes", "Vegetables"]
+  },
+  {
+    name: "Friday Dinner – Fish Fillet Feast",
+    category: "Dinner",
+    desc: "Crispy fish fillet with rice and coleslaw for a light and satisfying end to the week.",
+    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=900",
+    label: "Fresh Friday",
+    macros: "Omega-3 + Crunch",
+    ingredients: ["Fish Fillet", "Rice", "Coleslaw"]
+  },
+  {
+    name: "Saturday Dinner – BBQ Chicken Feast",
+    category: "Dinner",
+    desc: "Smoky BBQ chicken paired with crispy potato wedges and a fresh salad.",
+    img: "https://images.unsplash.com/photo-1498606378646-0d9e3e41ea4b?auto=format&fit=crop&q=80&w=900",
+    label: "Weekend Grill",
+    macros: "Grilled Protein + Comfort",
+    ingredients: ["BBQ Chicken", "Potato Wedges", "Salad"]
+  },
+  {
+    name: "Sunday Dinner – Nyumbani Family Platter",
+    category: "Dinner",
+    desc: "A family platter with roast chicken, rice, and vegetables for a hearty Sunday evening meal.",
+    img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=900",
+    label: "Family Platter",
+    macros: "Shared Comfort Meal",
+    ingredients: ["Roast Chicken", "Rice", "Vegetables"]
+  },
+
+  // Fitness Menu
+  {
+    name: "Fitness Breakfast",
+    category: "Fitness Menu",
+    desc: "A nutrient-rich breakfast with oats, peanut butter, banana, and boiled eggs to power a strong morning.",
+    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=900",
+    label: "Premium Add-on",
+    macros: "Clean Energy + Muscle Fuel",
+    ingredients: ["Oats", "Peanut Butter", "Banana", "Boiled Eggs"]
+  },
+  {
+    name: "Fitness Lunch",
+    category: "Fitness Menu",
+    desc: "Grilled chicken breast with brown rice and broccoli for a lean midday meal that supports performance.",
+    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=900",
+    label: "Fuel Up",
+    macros: "Protein + Complex Carbs",
+    ingredients: ["Grilled Chicken Breast", "Brown Rice", "Broccoli"]
+  },
+  {
+    name: "Fitness Dinner",
+    category: "Fitness Menu",
+    desc: "A clean dinner choice with your pick of fish or chicken, sweet potato, and mixed vegetables.",
+    img: "https://images.unsplash.com/photo-1481931715705-36a6673ba74c?auto=format&fit=crop&q=80&w=900",
+    label: "Recovery Plate",
+    macros: "Lean Protein + Veggies",
+    ingredients: ["Fish or Chicken", "Sweet Potato", "Mixed Vegetables"]
+  },
+
+  // Kids Menu
+  {
+    name: "Kids Breakfast",
+    category: "Kids Menu",
+    desc: "A fun kid-friendly breakfast with pancakes, fruit, and milk for a happy, nutritious start.",
+    img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=900",
+    label: "Little Ones",
+    macros: "Kid-Friendly + Balanced",
+    ingredients: ["Pancakes", "Fruit", "Milk"]
+  },
+  {
+    name: "Kids Lunch",
+    category: "Kids Menu",
+    desc: "Crispy chicken nuggets, chips, and juice for a comforting and familiar lunch loved by children.",
+    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&q=80&w=900",
+    label: "Playful Meal",
+    macros: "Protein + Comfort",
+    ingredients: ["Chicken Nuggets", "Chips", "Juice"]
+  },
+  {
+    name: "Kids Dinner",
+    category: "Kids Menu",
+    desc: "Creamy mac and cheese with vegetables and fruit for a cozy dinner packed with familiar favorites.",
+    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=900",
+    label: "Family Favorite",
+    macros: "Cheesy Comfort + Veg",
+    ingredients: ["Mac & Cheese", "Vegetables", "Fruit"]
   }
 ];
 
 function Meals() {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("Breakfast");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedMeal, setSelectedMeal] = useState(null); // Triggers detail popup modal
 
@@ -138,13 +277,13 @@ function Meals() {
         {/* ==================== PAGE HEADER ==================== */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 bg-[#21633D]/10 text-[#21633D] px-4 py-1.5 rounded-full text-xs font-bold font-['Poppins'] uppercase tracking-wider shadow-sm">
-            <Sparkles size={14} className="text-[#F28C28] animate-pulse" /> Freshly Sourced & Prepared
+            <Sparkles size={14} className="text-[#F28C28] animate-pulse" /> Weekly Menu & Daily Specials
           </div>
           <h1 className="font-['Poppins'] font-extrabold text-4xl sm:text-5xl tracking-tight text-[#3A2E24]">
-            Our Culinary Showcase
+            Breakfast, Lunch & Dinner Plans by Day
           </h1>
           <p className="font-['Great_Vibes'] text-[#F28C28] text-3xl">
-            Nutritious home-style masterclasses prepared to absolute perfection
+            Explore our curated daily meals, premium fitness add-ons, and family-friendly kids selections
           </p>
         </div>
 
@@ -187,6 +326,28 @@ function Meals() {
           ))}
         </div>
 
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <p className="text-sm uppercase tracking-[0.35em] text-[#6BA43A] font-bold font-['Poppins']">
+            {activeTab === 'All' ? 'Full Weekly Menu' : activeTab}
+          </p>
+          <h2 className="font-['Poppins'] font-extrabold text-3xl sm:text-4xl text-[#3A2E24]">
+            {activeTab === 'All' && 'A full showcase of our breakfast, lunch, dinner, fitness and kids meals'}
+            {activeTab === 'Breakfast' && 'Breakfast options to start your day with energy'}
+            {activeTab === 'Lunch' && 'Daily lunch specials with fresh Kenyan-inspired flavors'}
+            {activeTab === 'Dinner' && 'Comforting dinners for every evening of the week'}
+            {activeTab === 'Fitness Menu' && 'Premium fitness add-ons crafted for active lifestyles'}
+            {activeTab === 'Kids Menu' && 'Family-friendly kids meals made tasty and balanced'}
+          </h2>
+          <p className="text-sm text-gray-500 font-light px-4 sm:px-0">
+            {activeTab === 'Breakfast' && 'Choose from five breakfast sets including Kenyan Classic, Power Breakfast, Pancake Morning, Healthy Breakfast and Family Breakfast.'}
+            {activeTab === 'Lunch' && 'Browse our Monday through Sunday lunch plan, each day designed with hearty protein, fresh sides, and seasonal fruit.'}
+            {activeTab === 'Dinner' && 'Select from comforting dinner plates built for the week, from beef stew to family platters and seafood favorites.'}
+            {activeTab === 'Fitness Menu' && 'Explore our premium add-on meals with clean protein, complex carbs and nutrient-rich vegetables.'}
+            {activeTab === 'Kids Menu' && 'Find playful, wholesome kids meals for breakfast, lunch and dinner.'}
+            {activeTab === 'All' && 'Browse the full menu order by section, from breakfast to fitness add-ons and kids choices.'}
+          </p>
+        </div>
+
         {/* ==================== FILTER RESULT COUNT NOTIFIER ==================== */}
         {filteredItems.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-3xl shadow-sm border border-orange-100/30 max-w-lg mx-auto space-y-4">
@@ -196,61 +357,133 @@ function Meals() {
           </div>
         ) : (
           /* ==================== THE MENU MEAL MATRIX GRID ==================== */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((meal, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col group hover:-translate-y-2 border border-orange-50/50"
-              >
-                {/* Dynamic Image Media Frame */}
-                <div className="relative h-60 overflow-hidden bg-gray-100">
-                  <img 
-                    src={meal.img} 
-                    alt={meal.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Absolute Corner Overlay Badges */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-xl text-[10px] font-extrabold uppercase font-['Poppins'] tracking-wider text-[#21633D] shadow-sm flex items-center gap-1.5">
-                    <Award size={12} strokeWidth={3} /> {meal.label}
-                  </div>
-                  
-                  {/* Floating Action Button for Recipe Inspection Modal */}
-                  <button 
-                    onClick={() => setSelectedMeal(meal)}
-                    className="absolute bottom-4 right-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm text-[#3A2E24] hover:bg-[#F28C28] hover:text-white transition-all transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md flex items-center gap-1 text-xs font-semibold font-['Poppins']"
-                  >
-                    <Info size={14} /> Inspect Recipe
-                  </button>
-                </div>
+          <>
+            {activeTab === 'All' ? (
+              <div className="space-y-16">
+                {['Breakfast', 'Lunch', 'Dinner', 'Fitness Menu', 'Kids Menu'].map((section) => {
+                  const sectionItems = filteredItems.filter(item => item.category === section);
+                  if (!sectionItems.length) return null;
 
-                {/* Content Box */}
-                <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-['Poppins'] font-extrabold text-xl text-[#3A2E24] tracking-tight group-hover:text-[#21633D] transition-colors duration-300">
-                      {meal.name}
-                    </h3>
-                    <p className="text-gray-500 font-light text-sm leading-relaxed line-clamp-2">
-                      {meal.desc}
-                    </p>
-                  </div>
-                  
-                  {/* Base Metadata row lines */}
-                  <div className="pt-3 flex items-center justify-between border-t border-gray-100 text-xs">
-                    <span className="text-[#6BA43A] font-extrabold font-['Poppins'] tracking-wider uppercase bg-[#6BA43A]/10 px-2.5 py-1 rounded-md">
-                      {meal.category}
-                    </span>
-                    <div className="flex items-center gap-0.5 text-[#F28C28]">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={13} fill="currentColor" />
-                      ))}
+                  const sectionLabel = section === 'Fitness Menu' ? 'Fitness Add-On Menu' : section === 'Kids Menu' ? 'Kids Menu' : `${section} Menu`;
+                  return (
+                    <section key={section} className="space-y-6">
+                      <div className="rounded-[2rem] bg-white p-6 shadow-sm border border-orange-100/40">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.35em] text-[#6BA43A] font-bold font-['Poppins']">{sectionLabel}</p>
+                            <h3 className="mt-3 text-2xl sm:text-3xl font-['Poppins'] font-extrabold text-[#3A2E24]">{section === 'All' ? 'Full Menu' : section === 'Fitness Menu' ? 'Fitness Fuel' : section === 'Kids Menu' ? 'Family Kids' : section}</h3>
+                          </div>
+                          <p className="text-sm text-gray-500 font-light max-w-2xl">
+                            {section === 'Breakfast' && 'The best way to begin every morning with balanced energy and wholesome favorites.'}
+                            {section === 'Lunch' && 'Fresh daily lunch sets with Kenyan-inspired meals and seasonal sides.'}
+                            {section === 'Dinner' && 'Hearty evening choices to close the day with comfort and flavor.'}
+                            {section === 'Fitness Menu' && 'Nutrient-packed premium meals designed for strength, recovery, and clean fuel.'}
+                            {section === 'Kids Menu' && 'Fun, tasty meals made for kids with balanced nutrition in every plate.'}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {sectionItems.map((meal, index) => (
+                          <div 
+                            key={`${section}-${index}`} 
+                            className="bg-white rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col group hover:-translate-y-2 border border-orange-50/50"
+                          >
+                            <div className="relative h-60 overflow-hidden bg-gray-100">
+                              <img 
+                                src={meal.img} 
+                                alt={meal.name} 
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-xl text-[10px] font-extrabold uppercase font-['Poppins'] tracking-wider text-[#21633D] shadow-sm flex items-center gap-1.5">
+                                <Award size={12} strokeWidth={3} /> {meal.label}
+                              </div>
+                              <button 
+                                onClick={() => setSelectedMeal(meal)}
+                                className="absolute bottom-4 right-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm text-[#3A2E24] hover:bg-[#F28C28] hover:text-white transition-all transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md flex items-center gap-1 text-xs font-semibold font-['Poppins']"
+                              >
+                                <Info size={14} /> Inspect Recipe
+                              </button>
+                            </div>
+
+                            <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
+                              <div className="space-y-2">
+                                <h3 className="font-['Poppins'] font-extrabold text-xl text-[#3A2E24] tracking-tight group-hover:text-[#21633D] transition-colors duration-300">
+                                  {meal.name}
+                                </h3>
+                                <p className="text-gray-500 font-light text-sm leading-relaxed line-clamp-2">
+                                  {meal.desc}
+                                </p>
+                              </div>
+                              <div className="pt-3 flex items-center justify-between border-t border-gray-100 text-xs">
+                                <span className="text-[#6BA43A] font-extrabold font-['Poppins'] tracking-wider uppercase bg-[#6BA43A]/10 px-2.5 py-1 rounded-md">
+                                  {meal.category}
+                                </span>
+                                <div className="flex items-center gap-0.5 text-[#F28C28]">
+                                  {[...Array(5)].map((_, i) => (
+                                    <Star key={i} size={13} fill="currentColor" />
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredItems.map((meal, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col group hover:-translate-y-2 border border-orange-50/50"
+                  >
+                    <div className="relative h-60 overflow-hidden bg-gray-100">
+                      <img 
+                        src={meal.img} 
+                        alt={meal.name} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-xl text-[10px] font-extrabold uppercase font-['Poppins'] tracking-wider text-[#21633D] shadow-sm flex items-center gap-1.5">
+                        <Award size={12} strokeWidth={3} /> {meal.label}
+                      </div>
+                      <button 
+                        onClick={() => setSelectedMeal(meal)}
+                        className="absolute bottom-4 right-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm text-[#3A2E24] hover:bg-[#F28C28] hover:text-white transition-all transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 shadow-md flex items-center gap-1 text-xs font-semibold font-['Poppins']"
+                      >
+                        <Info size={14} /> Inspect Recipe
+                      </button>
+                    </div>
+
+                    <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
+                      <div className="space-y-2">
+                        <h3 className="font-['Poppins'] font-extrabold text-xl text-[#3A2E24] tracking-tight group-hover:text-[#21633D] transition-colors duration-300">
+                          {meal.name}
+                        </h3>
+                        <p className="text-gray-500 font-light text-sm leading-relaxed line-clamp-2">
+                          {meal.desc}
+                        </p>
+                      </div>
+                      <div className="pt-3 flex items-center justify-between border-t border-gray-100 text-xs">
+                        <span className="text-[#6BA43A] font-extrabold font-['Poppins'] tracking-wider uppercase bg-[#6BA43A]/10 px-2.5 py-1 rounded-md">
+                          {meal.category}
+                        </span>
+                        <div className="flex items-center gap-0.5 text-[#F28C28]">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} size={13} fill="currentColor" />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
 
       </div>
